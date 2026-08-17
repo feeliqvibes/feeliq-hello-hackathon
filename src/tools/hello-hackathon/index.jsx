@@ -3,11 +3,11 @@
 import React, { useState } from 'react'
 import { Sparkles, Copy, Check } from 'lucide-react'
 import PageShell from '@/components/PageShell'
-import { useTextAnalyzer } from './hooks/useTextAnalyzer'
-import InputArea from './components/InputArea'
-import StatsCard from './components/StatsCard'
-import WordFrequency from './components/WordFrequency'
-import ErrorBoundary from './components/ErrorBoundary'
+import { useTextAnalyzer } from './hooks/use-text-analyzer'
+import InputArea from './components/input-area'
+import StatsCard from './components/stats-card'
+import WordFrequency from './components/word-frequency'
+import ErrorBoundary from './components/error-boundary'
 
 export default function HelloHackathon({ tool }) {
   const { input, setInput, result, loading, error } = useTextAnalyzer()
