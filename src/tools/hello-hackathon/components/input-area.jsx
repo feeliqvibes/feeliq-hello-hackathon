@@ -5,11 +5,19 @@ import { Loader2, Sparkles } from 'lucide-react'
 
 // Input area with textarea and analyze button
 export default function InputArea({ input, setInput, loading, onAnalyze }) {
+  const handleChange = (e) => {
+    try {
+      setInput(e.target.value)
+    } catch (err) {
+      console.error('Input error:', err)
+    }
+  }
+
   return (
     <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 sm:p-6 space-y-4">
       <textarea
         value={input}
-        onChange={(e) => setInput(e.target.value)}
+        onChange={handleChange}
         placeholder="Paste or type your text here..."
         rows={6}
         className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg text-sm resize-none focus:outline-none focus:border-[#004aad] focus:ring-1 focus:ring-[#004aad] dark:bg-gray-900 dark:text-gray-100"

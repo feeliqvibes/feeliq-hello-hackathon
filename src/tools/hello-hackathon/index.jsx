@@ -15,16 +15,20 @@ export default function HelloHackathon({ tool }) {
 
   const copyResult = () => {
     if (!result) return
-    const text = [
-      `Word Count: ${result.wordCount}`,
-      `Character Count: ${result.charCount}`,
-      '',
-      'Top Words:',
-      ...result.topWords.map(w => `  ${w.word}: ${w.count}`),
-    ].join('\n')
-    navigator.clipboard.writeText(text)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
+    try {
+      const text = [
+        `Word Count: ${result.wordCount}`,
+        `Character Count: ${result.charCount}`,
+        '',
+        'Top Words:',
+        ...result.topWords.map(w => `  ${w.word}: ${w.count}`),
+      ].join('\n')
+      navigator.clipboard.writeText(text)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch (err) {
+      console.error('Failed to copy:', err)
+    }
   }
 
   return (
