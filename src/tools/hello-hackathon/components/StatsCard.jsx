@@ -2,6 +2,7 @@
 
 import React from 'react'
 
+// Stats card showing word and character counts
 export default function StatsCard({ wordCount, charCount }) {
   return (
     <div className="p-4 grid grid-cols-2 gap-3 sm:gap-4">

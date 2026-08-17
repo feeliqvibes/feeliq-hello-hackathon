@@ -1,13 +1,16 @@
+// Format large numbers with K/M suffixes
 export function formatNumber(num) {
   if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M'
   if (num >= 1000) return (num / 1000).toFixed(1) + 'K'
   return num.toString()
 }
 
+// Truncate string to specified length
 export function truncate(str, len = 50) {
   return str.length > len ? str.slice(0, len) + '...' : str
 }
 
+// Copy text to clipboard with fallback
 export function copyToClipboard(text) {
   if (navigator.clipboard) {
     return navigator.clipboard.writeText(text)

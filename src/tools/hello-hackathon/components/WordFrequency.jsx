@@ -2,6 +2,7 @@
 
 import React from 'react'
 
+// Word frequency display with progress bars
 export default function WordFrequency({ topWords }) {
   if (!topWords || topWords.length === 0) return null
 

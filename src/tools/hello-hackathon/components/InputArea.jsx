@@ -3,6 +3,7 @@
 import React from 'react'
 import { Loader2, Sparkles } from 'lucide-react'
 
+// Input area with textarea and analyze button
 export default function InputArea({ input, setInput, loading, onAnalyze }) {
   return (
     <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 sm:p-6 space-y-4">
